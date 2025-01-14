@@ -12,5 +12,5 @@ $(function () {
   $('body').append('<button>Click here to get started</button>');
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - ALX</p>');
-  $('button').bind('click', _.debounce(updateCounter));
+  $('button').on('click', _.debounce(updateCounter, 300));
 });
