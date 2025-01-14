@@ -1,4 +1,4 @@
-const $ = require('jquery');
+import $ from 'jquery';
 
 $(function () {
   $('body').append('<p>ALX Dashboard</p>');
