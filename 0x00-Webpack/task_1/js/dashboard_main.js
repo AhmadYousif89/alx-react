@@ -1,13 +1,10 @@
 import $ from 'jquery';
 import _ from 'lodash';
 
-function updateCounter() {
-  let count = 0;
-  $('button').on(
-    'click',
-    _.debounce(() => $('#count').html(`${++count} clicks on the button`), 300),
-  );
-}
+const updateCounter = () => {
+  let times = 0;
+  $('button').on('click', () => $('#count').html(`${++times} clicks on the button`));
+};
 
 $(function () {
   $('body').append('<p>ALX Dashboard</p>');
@@ -15,5 +12,7 @@ $(function () {
   $('body').append('<button>Click here to get started</button>');
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - ALX</p>');
+
   updateCounter();
+  _.debounce(updateCounter, 500);
 });
