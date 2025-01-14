@@ -1,9 +1,12 @@
 import $ from 'jquery';
 import _ from 'lodash';
 
-let count = 0;
 function updateCounter() {
-  $('#count').text(`${++count} clicks on the button`);
+  let count = 0;
+  $('button').on(
+    'click',
+    _.debounce(() => $('#count').html(`${++count} clicks on the button`), 300),
+  );
 }
 
 $(function () {
@@ -12,5 +15,5 @@ $(function () {
   $('body').append('<button>Click here to get started</button>');
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - ALX</p>');
-  $('button').on('click', _.debounce(updateCounter, 300));
+  updateCounter();
 });
