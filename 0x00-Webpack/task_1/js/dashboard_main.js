@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { debounce } from 'lodash';
+import _ from 'lodash';
 
 let count = 0;
 function updateCounter() {
@@ -12,5 +12,5 @@ $(function () {
   $('body').append('<button>Click here to get started</button>');
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - ALX</p>');
-  $('button').on('click', debounce(updateCounter, 300));
+  $('button').bind('click', _.debounce(updateCounter));
 });
