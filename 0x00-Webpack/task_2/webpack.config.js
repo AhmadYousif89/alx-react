@@ -9,7 +9,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jp?g|gif|svg)$/,
         use: ['file-loader', { loader: 'image-webpack-loader' }],
       },
     ],
