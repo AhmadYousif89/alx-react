@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  devtool: 'inline-source-map',
   entry: {
     header: './header/header.js',
     body: './body/body.js',
@@ -14,8 +15,8 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     sourceMapFilename: '[file].map',
   },
-  devtool: 'inline-source-map',
   devServer: {
+    contentBase: path.join(__dirname, './public'),
     port: 8564,
     open: true,
   },
