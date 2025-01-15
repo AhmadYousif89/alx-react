@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   mode: 'development',
   entry: './js/dashboard_main.js',
@@ -7,11 +5,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg)$/i,
         use: ['file-loader', { loader: 'image-webpack-loader' }],
       },
     ],
